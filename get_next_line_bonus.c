@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:01:27 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/01/14 09:55:12 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/01/14 10:19:04 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 // get_next_line: line:				current line
 // get_next_line: in_file:			0 = EOF, 1 = in file
 // ---
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 // FT_READ_LINE
 // used when spot not found and still in file
@@ -126,20 +126,20 @@ char	*ft_check_remainder(char **remainder, int fd, int *in_file, char *line)
 // return line
 char	*get_next_line(int fd)
 {
-	static char		*remainder;
+	static char		*remainder[521];
 	char			*line;
 	int				in_file;
 
 	in_file = 1;
 	if (fd == -1)
 		return (NULL);
-	if (remainder == NULL)
-		remainder = ft_read_line(fd, &in_file);
-	line = ft_check_remainder(&remainder, fd, &in_file, NULL);
+	if (remainder[fd] == NULL)
+		remainder[fd] = ft_read_line(fd, &in_file);
+	line = ft_check_remainder(&remainder[fd], fd, &in_file, NULL);
 	if (!line)
 	{
-		free(remainder);
-		remainder = NULL;
+		free(remainder[fd]);
+		remainder[fd] = NULL;
 	}
 	return (line);
 }
