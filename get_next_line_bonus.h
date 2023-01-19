@@ -6,14 +6,14 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:01:36 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/01/14 10:18:48 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/01/19 10:55:20 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 42
 # endif
 
 # include <stdlib.h>

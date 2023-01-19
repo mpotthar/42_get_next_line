@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:01:27 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/01/14 10:19:04 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:55:21 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ char	*ft_check_remainder(char **remainder, int fd, int *in_file, char *line)
 // return line
 char	*get_next_line(int fd)
 {
-	static char		*remainder[521];
+	static char		*remainder[1024];
 	char			*line;
 	int				in_file;
 
@@ -143,36 +143,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
-// // MAIN
-// #include <stdio.h>
-// #include <sys/types.h>
-// #include <sys/uio.h>
-// #include <sys/types.h>
-// #include <sys/stat.h>
-// #include <fcntl.h>
-// int main(void)
-// {
-// 	int fd;
-// 	char *temp;
-// 	fd = open("lines.txt", O_RDONLY);
-// 	temp = get_next_line(fd);
-// 	printf("%s", temp);
-// 	free(temp);
-// 	temp = get_next_line(fd);
-// 	printf("%s", temp);
-// 	free(temp);
-// 	temp = get_next_line(fd);
-// 	printf("%s", temp);
-// 	free(temp);
-// 	temp = get_next_line(fd);
-// 	printf("%s", temp);
-// 	free(temp);
-// 	temp = get_next_line(fd);
-// 	printf("%s", temp);
-// 	free(temp);
-// 	temp = get_next_line(fd);
-// 	printf("%s", temp);
-// 	free(temp);
-// 	close(fd);
-// }
