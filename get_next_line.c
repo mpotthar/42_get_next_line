@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:01:27 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/01/14 09:55:12 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:50:37 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_read_line(int fd, int *in_file)
 	char	*buffer;
 	int		read_return;
 
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
 	read_return = read(fd, buffer, BUFFER_SIZE);
@@ -58,6 +58,7 @@ char	*ft_read_line(int fd, int *in_file)
 		free(buffer);
 		return (NULL);
 	}
+	buffer[read_return] = '\0';
 	return (buffer);
 }
 

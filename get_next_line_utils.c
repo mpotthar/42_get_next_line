@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:01:43 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/01/11 12:01:44 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:53:42 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,24 +92,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substring[i] = s[start + i];
 	substring[i] = '\0';
 	return (substring);
-}
-
-// The ft_calloc() function contiguously allocates enough space for count
-// objects that are size bytes of memory each and returns a pointer to the
-// allocated memory.  The allocated memory is filled with bytes of value
-// zero.
-void	*ft_calloc(size_t count, size_t size)
-{
-	size_t	totalsize;
-	size_t	i;
-	void	*pointer;
-
-	totalsize = count * size;
-	pointer = malloc(totalsize);
-	i = -1;
-	if (pointer == NULL)
-		return (NULL);
-	while (++i < totalsize)
-		((char *)pointer)[i] = 0;
-	return (pointer);
 }

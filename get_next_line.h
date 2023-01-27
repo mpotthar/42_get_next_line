@@ -6,7 +6,7 @@
 /*   By: mpotthar <mpotthar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:01:36 by mpotthar          #+#    #+#             */
-/*   Updated: 2023/01/19 10:55:27 by mpotthar         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:53:10 by mpotthar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *s);
-void	*ft_calloc(size_t count, size_t size);
 
 #endif
